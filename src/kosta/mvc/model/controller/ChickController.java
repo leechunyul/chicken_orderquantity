@@ -29,21 +29,21 @@ public class ChickController {
             e.printStackTrace();
         }
     }
-//    public static void TimeGroupSelect() {
-//        try {
-//            List<TimeDTO> dto = chickService
-//            PrintView.selectPrintTime(dto);
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//    }
-//public static void SexGroupSelect() {
-//    try {
-//        List<TimeDTO> dto = chickService
-//        PrintView.selectPrintSex(dto);
-//    } catch (SQLException e) {
-//        e.printStackTrace();
-//    }
-//}
+    public static void TimeGroupSelect() {
+        try {
+            List<TimeDTO> dto = chickService.chickTimeGroup();
+            PrintView.selectPrintTime(dto);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+public static void GenderGroupSelect() {
+    try {
+        List<TimeDTO> dto = chickService.chickGenderGroup();
+        PrintView.selectPrintSex(dto);
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+}
 
 }

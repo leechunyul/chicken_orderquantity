@@ -1,9 +1,10 @@
 package kosta.mvc.model.dao;
 
-import kosta.mvc.model.dto.ChickenDTO;
-
 import java.sql.SQLException;
 import java.util.List;
+
+import kosta.mvc.model.dto.ChickenDTO;
+import kosta.mvc.model.dto.TimeDTO;
 
 public interface ChickenDao {
 
@@ -19,8 +20,9 @@ public interface ChickenDao {
     /**
      * 3. 성별
      */
-
+    List<TimeDTO> getGenderGroup() throws SQLException;
     /**
-     * 4. 시간대별
+     * 4. 시간대
      */
+    List<TimeDTO> getTimeGroup() throws SQLException;
 }

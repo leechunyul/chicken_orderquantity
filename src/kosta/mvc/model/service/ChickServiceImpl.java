@@ -3,6 +3,7 @@ package kosta.mvc.model.service;
 import kosta.mvc.model.dao.ChickenDao;
 import kosta.mvc.model.dao.ChickenDaoImpl;
 import kosta.mvc.model.dto.ChickenDTO;
+import kosta.mvc.model.dto.TimeDTO;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -27,4 +28,22 @@ public class ChickServiceImpl implements ChickService{
         }
         return list;
     }
+
+	@Override
+	public List<TimeDTO> chickGenderGroup() throws SQLException {
+		List<TimeDTO> list = chickenDao.getGenderGroup();
+		if(list.isEmpty()) {
+			throw new SQLException("검색된 레코드가 없습니다.");
+		}
+		return list;
+	}
+
+	@Override
+	public List<TimeDTO> chickTimeGroup() throws SQLException {
+		List<TimeDTO> list = chickenDao.getTimeGroup();
+		if(list.isEmpty()) {
+			throw new SQLException("검색된 레코드가 없습니다.");
+		}
+		return list;
+	}
 }

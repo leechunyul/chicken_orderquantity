@@ -28,10 +28,10 @@ public class MenuView {
                         ChickController.AgeGroupSelect();
                         break;
                     case 3:
-
+                    	ChickController.TimeGroupSelect();
                         break;
                     case 4:
-
+                    	ChickController.GenderGroupSelect();
                         break;
                     case 5:
                         System.out.println("종료");
