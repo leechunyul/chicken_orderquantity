@@ -1,6 +1,7 @@
 package kosta.mvc.model.dto;
 
 public class TimeDTO {
+	private String sex;
 	private int referenceDate;  //기준일
 	private String day; //요일
 	private int time;  //시간
@@ -9,21 +10,26 @@ public class TimeDTO {
 	private String sigun;   //시군
 	private String eupmundong;  //읍면동
 	private int call;   //통화건수
-	
+
+	public String getSex() {
+		return sex;
+	}
+
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+
 	public TimeDTO() {
 		
 	}
+	public TimeDTO(String sex, int call) {//성별
+		this.sex = sex;
+		this.call = call;
+	}
 
-	public TimeDTO(int referenceDate, String day, int time, String sectors, String city, String sigun,
-			String eupmundong, int call) {
-		super();
-		this.referenceDate = referenceDate;
-		this.day = day;
+	public TimeDTO(int time, String city, int call) {//시간대
 		this.time = time;
-		this.sectors = sectors;
 		this.city = city;
-		this.sigun = sigun;
-		this.eupmundong = eupmundong;
 		this.call = call;
 	}
 

@@ -12,13 +12,19 @@ public class ChickServiceImpl implements ChickService{
 
     @Override
     public List<ChickenDTO> chickRegionalGroup() throws SQLException {
-        List<ChickenDTO> list =
-
-        return null;
+        List<ChickenDTO> list = chickenDao.getRegionalGroup();
+        if (list.isEmpty()) {
+            throw new SQLException("검색된 레코드가 없습니다");
+        }
+        return list;
     }
 
     @Override
     public List<ChickenDTO> chickAgeGroup() throws SQLException {
-        return null;
+        List<ChickenDTO> list = chickenDao.getAgeGroup();
+        if (list.isEmpty()) {
+            throw new SQLException("검색된 레코드가 없습니다");
+        }
+        return list;
     }
 }

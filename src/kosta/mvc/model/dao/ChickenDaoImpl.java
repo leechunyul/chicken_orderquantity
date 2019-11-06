@@ -40,6 +40,27 @@ public class ChickenDaoImpl implements ChickenDao{
 
     @Override
     public List<ChickenDTO> getAgeGroup() throws SQLException {
-        return null;
+        Connection con=null;
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        String sql = "SELECT *\n" +
+                "FROM(SELECT 연령대,시도,SUM(통화건수) AS 통화총량 FROM CHICKEN GROUP BY 연령대,시도 ORDER BY 통화총량 DESC)\n" +
+                "WHERE ROWNUM <=3";
+        List<ChickenDTO> list = new ArrayList<>();
+        try {
+            con = DbUtil.getConnection();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                ChickenDTO dto = new ChickenDTO(rs.getString(1),rs.getString(2), rs.getInt(3));
+                list.add(dto);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            DbUtil.dbClose(con,ps,rs);
+        }
+        return list;
     }
 }

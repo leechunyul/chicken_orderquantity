@@ -10,6 +10,7 @@ public class ChickenDTO {
 	private String eupmundong;  //읍면동
 	private String sectors;  //업종
 	private int call;		//통화건수
+
 	
 	public ChickenDTO(){
 		
@@ -33,6 +34,14 @@ public class ChickenDTO {
 		this.eupmundong = eupmundong;
 		this.call = call;
 	}
+
+	public ChickenDTO(String ageRange, String city, int call) {//연령대 생성자
+		this.ageRange = ageRange;
+		this.city = city;
+		this.call = call;
+	}
+
+
 
 	public int getReferenceDate() {
 		return referenceDate;
@@ -105,12 +114,20 @@ public class ChickenDTO {
 	public void setCall(int call) {
 		this.call = call;
 	}
-	
-	
 
 
-
-	
-	
-
+	@Override
+	public String toString() {
+		return "ChickenDTO{" +
+				"referenceDate=" + referenceDate +
+				", day='" + day + '\'' +
+				", gender='" + gender + '\'' +
+				", ageRange='" + ageRange + '\'' +
+				", city='" + city + '\'' +
+				", sigun='" + sigun + '\'' +
+				", eupmundong='" + eupmundong + '\'' +
+				", sectors='" + sectors + '\'' +
+				", call=" + call +
+				'}';
+	}
 }
