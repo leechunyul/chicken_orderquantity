@@ -40,7 +40,7 @@ public class ChickController {
 public static void GenderGroupSelect() {
     try {
         List<TimeDTO> dto = chickService.chickGenderGroup();
-        PrintView.selectPrintSex(dto);
+        PrintView.selectPrintGender(dto);
     } catch (SQLException e) {
         e.printStackTrace();
     }
