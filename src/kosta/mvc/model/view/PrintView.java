@@ -34,7 +34,7 @@ public class PrintView {
             cnt++;
         }
     }
-    public static void selectPrintSex(List<TimeDTO> list) {
+    public static void selectPrintGender(List<TimeDTO> list) {
         int cnt=1;
         for (TimeDTO dto : list) {
 
