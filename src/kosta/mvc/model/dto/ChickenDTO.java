@@ -29,6 +29,11 @@ public class ChickenDTO {
 		this.call = call;  
 	}
 
+	public ChickenDTO(String eupmundong, int call) {
+		this.eupmundong = eupmundong;
+		this.call = call;
+	}
+
 	public int getReferenceDate() {
 		return referenceDate;
 	}
