@@ -1,6 +1,7 @@
 package kosta.mvc.model.controller;
 
 import kosta.mvc.model.dto.ChickenDTO;
+import kosta.mvc.model.dto.TimeDTO;
 import kosta.mvc.model.service.ChickService;
 import kosta.mvc.model.service.ChickServiceImpl;
 import kosta.mvc.model.view.PrintView;
@@ -28,4 +29,21 @@ public class ChickController {
             e.printStackTrace();
         }
     }
+//    public static void TimeGroupSelect() {
+//        try {
+//            List<TimeDTO> dto = chickService
+//            PrintView.selectPrintTime(dto);
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//    }
+//public static void SexGroupSelect() {
+//    try {
+//        List<TimeDTO> dto = chickService
+//        PrintView.selectPrintSex(dto);
+//    } catch (SQLException e) {
+//        e.printStackTrace();
+//    }
+//}
+
 }
