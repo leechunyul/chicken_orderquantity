@@ -30,7 +30,7 @@ public class PrintView {
         int cnt=1;
         for (TimeDTO dto : list) {
 
-            System.out.println(cnt+"위 : "+dto.getTime()+" ==> 주문이용량 : 총"+dto.getCall()+"건");
+            System.out.println(cnt+"위 : "+dto.getTime()+"시 ==> 주문이용량 : 총"+dto.getCall()+"건");
             cnt++;
         }
     }
