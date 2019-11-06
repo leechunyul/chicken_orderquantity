@@ -4,7 +4,6 @@ import kosta.mvc.model.dto.ChickenDTO;
 
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Vector;
 
 public interface ChickenDao {
 
