@@ -6,17 +6,18 @@ import java.util.Scanner;
 
 public class MenuView {
     static Scanner sc = new Scanner(System.in);
-    ChickController chickController = new ChickController();
+
     public static void menuChoice() {
         while(true) {
-            System.out.println("\n----------------------------------------");
-            System.out.print("[ 1. 지역별 검색 ");
-            System.out.print("2. 연령대별 검색 ");
-            System.out.print("3. 시간대별 검색 ");
-            System.out.print("4. 성별 검색 ");
+            System.out.print("\n======================검색 분류==========================");
+            System.out.println("\n---------------------------------------------------------");
+            System.out.print("[ 1. 지역별 ");
+            System.out.print("2. 연령대별 ");
+            System.out.print("3. 시간대별 ");
+            System.out.print("4. 성별 ");
             System.out.print("5. 종료 ]");
 
-            System.out.println("\n--------------------------------------------");
+            System.out.println("\n---------------------------------------------------------");
             System.out.println("선택메뉴는?");
             try {
                 int menu = Integer.parseInt(sc.nextLine());//
@@ -40,7 +41,6 @@ public class MenuView {
                     default:
                         System.out.println("잘못되었습니다..다시 입력해주세요.");
                 }
-
             }catch (NumberFormatException e) {
                 System.out.println("메뉴는 숫자만 가능합니다.");
             }

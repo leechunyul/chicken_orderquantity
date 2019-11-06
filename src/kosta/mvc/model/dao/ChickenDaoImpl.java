@@ -17,9 +17,11 @@ public class ChickenDaoImpl implements ChickenDao{
         Connection con=null;
         PreparedStatement ps=null;
         ResultSet rs=null;
-        String sql = "SELECT *\n" +
-                "FROM(SELECT 읍면동,SUM(통화건수) AS 통화총량 FROM CHICKEN GROUP BY 읍면동 ORDER BY 통화총량 DESC)\n" +
-                "WHERE ROWNUM <=3";
+//        String sql = "SELECT *\n" +
+//				"FROM(SELECT 읍면동,SUM(통화건수) AS 통화총량 FROM CHICKEN GROUP BY 읍면동 ORDER BY 통화총량 DESC)\n" +
+//				"WHERE ROWNUM <=3";
+		String sql = "SELECT *\n" +
+				"FROM(SELECT 읍면동,SUM(통화건수) AS 통화총량 FROM CHICKEN GROUP BY 읍면동 ORDER BY 통화총량 DESC)";
         List<ChickenDTO> list = new ArrayList<>();
         try {
             con = DbUtil.getConnection();
@@ -44,8 +46,7 @@ public class ChickenDaoImpl implements ChickenDao{
         PreparedStatement ps=null;
         ResultSet rs=null;
         String sql = "SELECT *\n" +
-                "FROM(SELECT 연령대,시도,SUM(통화건수) AS 통화총량 FROM CHICKEN GROUP BY 연령대,시도 ORDER BY 통화총량 DESC)\n" +
-                "WHERE ROWNUM <=3";
+                "FROM(SELECT 연령대,시도,SUM(통화건수) AS 통화총량 FROM CHICKEN GROUP BY 연령대,시도 ORDER BY 통화총량 DESC)";
         List<ChickenDTO> list = new ArrayList<>();
         try {
             con = DbUtil.getConnection();
@@ -101,8 +102,7 @@ public class ChickenDaoImpl implements ChickenDao{
 			String sql = "SELECT *\r\n" + 
 					"FROM(SELECT 시간대,시도, SUM(통화건수) AS 통화총량\r\n" + 
 					"FROM TIMECHICKEN WHERE 업종='치킨'\r\n" + 
-					"GROUP BY 시간대,시도 ORDER BY 통화총량 DESC) \r\n" + 
-					"WHERE ROWNUM <=3";
+					"GROUP BY 시간대,시도 ORDER BY 통화총량 DESC)";
 			
 			try {
 				con = DbUtil.getConnection();
